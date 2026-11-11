@@ -1,0 +1,6 @@
+{
+  "name": "Shantik - Scrapbook Kenangan & Cerita Cinta",
+  "description": "Scrapbook digital interaktif Shantik dengan 9 album foto kenangan, animasi chibi, penghitung hari jadian, dan surat cinta.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

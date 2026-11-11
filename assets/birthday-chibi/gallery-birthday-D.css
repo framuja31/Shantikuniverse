@@ -1,0 +1,92 @@
+/* Album 1 only — birthday spritesheet in scrapbook cover + memory book viewer.
+   All other themes, assets and album animations are intentionally untouched. */
+#gallery .memory-album-feature>.birthday-sticker-trigger {
+  --sticker-width:110px;top:-82px;right:-11px;left:auto;
+  width:var(--sticker-width);height:118px;display:block;filter:none;transform:rotate(7deg);
+  isolation:isolate;transition:transform .25s ease;z-index:8;
+}
+#gallery .birthday-sticker-trigger .birthday-sticker-paper {
+  display:block;position:absolute;inset:0 0 13px;border:3px solid #fffbf9;
+  border-bottom-width:12px;border-radius:7px;background:#fff9f6;
+  box-shadow:0 5px 12px rgba(113,64,86,.19);overflow:hidden;
+}
+#gallery .birthday-sticker-trigger .birthday-sticker-paper img {
+  width:100%;height:100%;object-fit:cover;animation:none!important;
+  display:block;mix-blend-mode:multiply;
+}
+#gallery .birthday-sticker-note {
+  position:absolute;right:8px;bottom:-1px;font:italic 600 13px 'Playfair Display',Georgia,serif;
+  line-height:1;color:#af5d79;text-shadow:0 1px #fff9f9;white-space:nowrap;
+}
+@media(hover:hover){#gallery .birthday-sticker-trigger:hover{transform:rotate(0deg) translateY(-5px)}}
+#gallery .birthday-sticker-trigger:focus-visible{outline:3px solid #9f5274;outline-offset:4px;border-radius:8px}
+#gallery .birthday-animation-panel[hidden] {display:none!important}
+#gallery .birthday-animation-panel {
+  background:linear-gradient(160deg,#fff0f3,#fce5e8 75%,#fff8f5);
+  border:1px dashed #dfb4c4;border-radius:19px;
+  padding:12px 11px 7px;box-shadow:0 3px 0 #fffdfa,0 9px 15px #a34f6910;
+  text-align:center;margin:0 0 19px;
+}
+#gallery .birthday-animation-toolbar {display:flex;align-items:center;justify-content:space-between;gap:10px}
+#gallery .birthday-animation-eyebrow {font:italic 500 .82rem 'Playfair Display',Georgia,serif;color:#a45772;letter-spacing:.01em}
+#gallery .birthday-replay {font:600 .67rem system-ui,sans-serif;padding:6px 10px;border:1px solid #e1b3c4;border-radius:100px;background:#fff9fa;color:#99536e;white-space:nowrap;min-height:32px;cursor:pointer}
+#gallery .birthday-animation-scene {position:relative;display:flex;align-items:center;justify-content:center;min-height:205px;isolation:isolate}
+#gallery .birthday-animation-sprite {
+  width:min(210px,100%);aspect-ratio:1/1;flex:none;
+  background-image:url('birthday-cake-24.png');background-size:600% 400%;
+  background-position:0% 0%;background-repeat:no-repeat;
+  mix-blend-mode:multiply;will-change:background-position;
+}
+#gallery .birthday-animation-sparkle {position:absolute;z-index:2;color:#d282a1;pointer-events:none}
+#gallery .birthday-animation-sparkle-one {font-size:28px;top:14px;right:22px;transform:rotate(12deg)}
+#gallery .birthday-animation-sparkle-two {font-size:27px;bottom:18px;left:15px;transform:rotate(-15deg)}
+#gallery .birthday-animation-caption {font:italic .76rem/1.5 'Playfair Display',Georgia,serif;color:#ad788c;margin:0 7px 5px}
+@media(max-width:680px){
+ #gallery .memory-album-feature>.birthday-sticker-trigger{--sticker-width:92px;height:102px;top:-66px;right:0}
+ #gallery .birthday-animation-panel{margin:0 0 11px;padding:9px 10px 5px}
+ #gallery .birthday-animation-scene{min-height:164px}
+ #gallery .birthday-animation-sprite{width:168px}
+ #gallery .birthday-animation-sparkle-one{font-size:21px;right:10%;top:8px}
+ #gallery .birthday-animation-sparkle-two{font-size:19px;left:8%;bottom:10px}
+ #gallery .birthday-animation-caption{font-size:.72rem}
+}
+@media(prefers-reduced-motion:reduce){
+ #gallery .memory-album-feature>.birthday-sticker-trigger{transition:none}
+ #gallery .birthday-animation-sparkle{animation:none}
+}
+
+/* Album 1: keep the real vertical photos fully visible in its book viewer. */
+#gallery .memory-dialog.birthday-open .memory-media {
+  display:flex;align-items:center;justify-content:center;min-height:0;
+}
+#gallery .memory-dialog.birthday-open .memory-media img,
+#gallery .memory-dialog.birthday-open .memory-media video {
+  width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;flex:0 1 auto;
+}
+
+/* Album 1 Option C: real transparent cutout that overlaps the Polaroid photo area.
+   No sticker backing, no panel, no text label. Only Album 1 is affected. */
+#gallery .memory-album-feature>.birthday-sticker-trigger {
+  --sticker-width:clamp(138px,37%,168px);
+  top:37px; right:-7px; left:auto;
+  width:var(--sticker-width); height:auto; aspect-ratio:1/1;
+  transform:none; padding:0; margin:0;
+  background:transparent; border:0; box-shadow:none;
+  filter:drop-shadow(0 7px 5px rgba(84,48,61,.18));
+  z-index:8; transition:transform .25s ease; overflow:visible;
+}
+#gallery .birthday-sticker-trigger>.birthday-sticker-cutout {
+  display:block; width:100%; height:100%; object-fit:contain;
+  object-position:center; background:transparent;
+  border:0; border-radius:0; filter:none;
+  animation:none!important; mix-blend-mode:normal;
+}
+#gallery .birthday-sticker-paper,#gallery .birthday-sticker-note {display:none!important;}
+@media(hover:hover){#gallery .memory-album-feature>.birthday-sticker-trigger:hover{transform:translate3d(0,-4px,0) scale(1.025)}}
+@media(max-width:680px){
+ #gallery .memory-album-feature>.birthday-sticker-trigger{
+   --sticker-width:112px;top:35px;right:-4px;
+   height:auto;aspect-ratio:1/1;transform:none;
+ }
+}
+@media(max-width:370px){#gallery .memory-album-feature>.birthday-sticker-trigger{--sticker-width:98px;top:35px;right:0}}

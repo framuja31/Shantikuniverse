@@ -1,0 +1,19 @@
+/* Album 9: Pink Love Diary scrapbook cover, with its actual original photos. */
+#gallery .memory-album-birthday-friend {--album-tilt:1deg;margin-top:4px;}
+#gallery .memory-album-birthday-friend .memory-album-open:before {background:#f6d7dc;}
+#gallery .memory-album-birthday-friend .memory-photo-stage {background:linear-gradient(135deg,#fde8ed,#f9ece2 70%,#fff5f1);}
+#gallery .memory-album-birthday-friend .memory-photo-main {left:4%;top:5%;width:70%;height:88%;transform:rotate(-4deg);}
+#gallery .memory-album-birthday-friend .memory-photo-second {right:1%;bottom:5%;width:45%;height:61%;transform:rotate(7deg);}
+#gallery .memory-album-birthday-friend .memory-photo-main img {object-position:center 43%;}
+#gallery .memory-album-birthday-friend .memory-photo-second img {object-position:center 49%;}
+#gallery .memory-album-birthday-friend .memory-photo-scribble {color:#c985a0;}
+@media(hover:hover){
+ #gallery .memory-album-birthday-friend:hover .memory-photo-main {transform:rotate(-7deg) translate(-3px,-3px);}
+ #gallery .memory-album-birthday-friend:hover .memory-photo-second {transform:rotate(10deg) translate(3px,-4px);}
+}
+
+/* Album 9 interior animation: lightweight, responsive, separate from photo viewer. */
+#gallery .album9-animation-panel[hidden]{display:none!important;}
+#gallery .album9-animation-scene{min-height:240px;display:flex;align-items:center;justify-content:center;}
+#gallery .album9-animation-gif{display:block;height:226px;width:auto;max-width:100%;object-fit:contain;background:#f6e7e2;border-radius:12px;box-shadow:0 6px 15px rgba(91,51,64,.14);}
+@media(max-width:680px){#gallery .album9-animation-scene{min-height:192px;}#gallery .album9-animation-gif{height:180px;}}
